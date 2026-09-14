@@ -1,0 +1,85 @@
+@font-face {
+  font-family:Inter;
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url('../fonts/InterVariable.woff2') format('woff2');
+}
+:root {
+  --ink:#111;
+  --accent:#15734c;
+  --muted:#5a6169;
+  --border:#e6e8e6;
+  --alt:#f7f8f7;
+  --soft:#e8f4ee;
+}
+* {
+  box-sizing:border-box;
+}
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+body {
+  margin:0;
+  background:#fff;
+  color:var(--ink);
+  font:16px/1.6 Inter,'Helvetica Neue',Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a {
+  color:var(--accent);
+  text-decoration:none;
+}
+a:hover {
+  color:#0f5a3b;
+}
+button {
+  font:inherit;
+  cursor:pointer;
+}
+button,a {
+  transition:background .18s,color .18s,box-shadow .18s,transform .18s;
+}
+a:focus-visible,button:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+}
+.container {
+  width:min(1120px,calc(100% - 40px));
+  margin:auto;
+}
+h1,h2,h3,p {
+  margin-top:0;
+}
+h2 {
+  font-size:clamp(28px,3vw,36px);
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:-.03em;
+  margin-bottom:18px;
+}
+h3 {
+  font-size:18px;
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+h4 {
+  font-size:14px;
+  margin:0 0 8px;
+}
+p {
+  margin-bottom:16px;
+}
+.skip {
+  position:fixed;
+  left:16px;
+  top:-70px;
+  background:#111;
+  color:#fff;
+  padding:10px;
+  z-index:100;
+}
+.skip:focus {
+  top:12px;
+}

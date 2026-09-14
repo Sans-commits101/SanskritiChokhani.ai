@@ -1,0 +1,37 @@
+name: Deploy Firebase production
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: firebase-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check deployment secret is configured
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANSKRITICHOKHANI_AI }}
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then
+            echo "::error::Add repository secret FIREBASE_SERVICE_ACCOUNT_SANSKRITICHOKHANI_AI. See .github/DEPLOYMENT_SETUP.md."
+            exit 1
+          fi
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANSKRITICHOKHANI_AI }}
+          channelId: live
+          projectId: sanskritichokhani-ai

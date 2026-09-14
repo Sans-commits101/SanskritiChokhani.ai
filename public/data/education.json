@@ -1,0 +1,50 @@
+{
+  "education": [
+    {
+      "institution": "Columbia University",
+      "initials": "CU",
+      "date": "JAN 2025 – EXPECTED DEC 2026",
+      "location": "NEW YORK, NY",
+      "degree": "M.S. Business Analytics",
+      "summary": "Statistics, optimization, and AI—with a business lens.",
+      "courseGroups": [
+        {
+          "name": "Data & decision science",
+          "courses": [
+            "Probability, Statistics & Simulation",
+            "Machine Learning",
+            "Optimization Models & Methods",
+            "Business Analytics"
+          ]
+        },
+        {
+          "name": "AI & emerging applications",
+          "courses": [
+            "Foundations of AI",
+            "Generative AI",
+            "AI Applications in Finance (enrolled)",
+            "Agentic AI for OR and FE (current)"
+          ]
+        },
+        {
+          "name": "Business & product",
+          "courses": [
+            "Product Management",
+            "Marketing Analytics",
+            "Process Improvement & Growth",
+            "Operations Strategy"
+          ]
+        }
+      ]
+    },
+    {
+      "institution": "University of Delhi",
+      "initials": "DU",
+      "date": "AUG 2019 – MAY 2022",
+      "location": "DELHI, INDIA",
+      "degree": "B.S. (Honors) Statistics",
+      "summary": "GPA: 3.97 / 4.0. A foundation in statistical inference, regression, and econometrics.",
+      "courseGroups": []
+    }
+  ]
+}
