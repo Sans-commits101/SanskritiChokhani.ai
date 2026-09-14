@@ -1,10 +1,10 @@
 # SanskritiChokhani.ai
 
-Personal portfolio adapted from the `gxa/new-style` branch of [GAInTheHouse/gainthehouse.com](https://github.com/GAInTheHouse/gainthehouse.com/tree/gxa/new-style), reference revision `ce4d5fba93fbd33f913dd079542c29b68abaab65`.
+Personal portfolio for Sanskriti Chokhani, highlighting work in data science, business analytics, and agentic AI.
 
 ## Structure
 
-The authored site follows the reference's static `public/` structure:
+The site uses a lightweight static `public/` structure:
 
 ```text
 public/
@@ -41,8 +41,8 @@ No dependencies or build step are required to serve the website. Firebase Hostin
 
 ## Content
 
-Edit `public/data/` to update projects, experience, education, skills, and career highlights. JSON uses the reference's collection keys (`projects`, `experiences`, `education`, `categories`), with portfolio-specific fields documented in `DATA_SCHEMA.md`. Highlights use a separate file because they represent supplied business results rather than inferred counts.
+Edit `public/data/` to update projects, experience, education, skills, and career highlights. The JSON collections (`projects`, `experiences`, `education`, and `categories`) and portfolio-specific fields are documented in `DATA_SCHEMA.md`. Highlights use a separate file because they represent supplied business results rather than inferred counts.
 
-Only sections supported by Sanskriti's supplied material are included. Unused reference articles, organizations, hobbies, legacy Bootstrap/jQuery, test pages, and other people's assets are omitted. Project and work descriptions retain the existing local rich-text `body` field, rendered by the dialog, rather than the reference's plain-text `description` array. This deliberate extension preserves the current detailed stories; do not put untrusted HTML in these fields.
+The portfolio includes only sections supported by Sanskriti's supplied material. Project and work descriptions use a local rich-text `body` field rendered by the detail dialog. This preserves the full project stories; do not put untrusted HTML in these fields.
 
-Design and Inter font provenance: reference branch above. All personal content comes from the supplied resume and Columbia coursework context. The original downloadable resume is unchanged. No deployment has occurred.
+The visual system uses custom CSS and a locally served Inter variable font. Personal content comes from Sanskriti's resume and Columbia coursework context. The downloadable resume is unchanged. No deployment has occurred.

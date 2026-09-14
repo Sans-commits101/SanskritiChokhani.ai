@@ -1,10 +1,10 @@
 # Deploy SanskritiChokhani.ai to Firebase Hosting
 
-## What was adapted
+## Deployment configuration
 
 - Firebase project: `sanskritichokhani-ai`, verified against the local service account's `project_id`. The project ID and both workflow secret references consistently target this portfolio.
 - GitHub repository: `Sans-commits101/SanskritiChokhani.ai`.
-- Production branch: `main`, matching the local `origin/HEAD`. The working branch is `codex/portfolio-new-style`.
+- Production branch: `main`, matching the local `origin/HEAD`.
 - This is a static HTML/CSS/JavaScript site with JSON content. Firebase Hosting serves `public/` directly; no npm install, build command, Firebase browser SDK, database, or SPA rewrite is needed. Navigation uses page anchors.
 - The existing service account JSON is already in `.secrets/` with owner-only file permissions (0600); no key is currently present in `public/`. Both Git ignores and Hosting exclusions were added. `.gitignore` alone does **not** control Firebase uploads or a local HTTP server.
 
@@ -39,12 +39,12 @@ git diff --check
 git add .gitignore .firebaserc firebase.json .github/ README.md public/index.html
 git diff --cached --stat
 git commit -m "Configure Firebase Hosting and GitHub deployments"
-git push -u origin codex/portfolio-new-style
+git push -u origin HEAD
 ```
 
 Review the staged file list before committing; `.secrets/` must not appear. The staging command covers the deployment changes; ensure any future website changes under `public/` are also intentionally committed when deploying them.
 
-Open a pull request from `codex/portfolio-new-style` into `main`. Wait for **Validate and preview Firebase pull request**. For a same-repository PR, the action posts a temporary preview URL. Check the rendered sections, project dialogs, mobile navigation, portrait, and resume download there. Previews expire seven days after their last deployment and are publicly accessible. Fork and Dependabot PRs run validation but skip secret-backed preview deployment. Give repository write access only to trusted collaborators because their same-repository workflows can access deployment secrets.
+Open a pull request from the current branch into `main`. Wait for **Validate and preview Firebase pull request**. For a same-repository PR, the action posts a temporary preview URL. Check the rendered sections, project dialogs, mobile navigation, portrait, and resume download there. Previews expire seven days after their last deployment and are publicly accessible. Fork and Dependabot PRs run validation but skip secret-backed preview deployment. Give repository write access only to trusted collaborators because their same-repository workflows can access deployment secrets.
 
 No separate GitHub webhook or local Git hook is required: the workflow event triggers are the CI/CD integration. See [Firebase's GitHub integration guide](https://firebase.google.com/docs/hosting/github-integration).
 

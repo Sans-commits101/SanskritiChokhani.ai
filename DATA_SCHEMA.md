@@ -8,4 +8,4 @@ All content files live in `public/data/` and are loaded independently by `public
 - `skills.json`: `{ "categories": [...], "tools": [...] }`. Categories contain `name`, `skills` (objects with `label`), and `note`. Tools are strings.
 - `highlights.json`: `{ "highlights": [...] }`. Each highlight has `value`, `label`, and `organization`.
 
-These use the upstream collection conventions with extensions for the user's existing content. Do not substitute the original author's data or invent achievements. Keep course cases distinguished from employment results.
+These collections are tailored to the portfolio's existing content. Do not invent achievements, and keep course cases distinguished from employment results.
