@@ -1,14 +1,48 @@
 # SanskritiChokhani.ai
 
-Personal portfolio for Sanskriti Chokhani. Static HTML, CSS and JavaScript; no build step or application dependencies.
+Personal portfolio adapted from the `gxa/new-style` branch of [GAInTheHouse/gainthehouse.com](https://github.com/GAInTheHouse/gainthehouse.com/tree/gxa/new-style), reference revision `ce4d5fba93fbd33f913dd079542c29b68abaab65`.
 
-Serve `dist/` with a local HTTP server to preview. All deployable files live in `dist/`. Deployment has deliberately not been configured or performed.
+## Structure
 
-- `dist/index.html`: bio, navigation, education, skills and contact links.
-- `dist/app.js`: project and experience content, accessible detail dialogs and mobile menu.
-- `dist/styles.css`: responsive styles.
-- `dist/assets/`: supplied portrait, original downloadable resume and template background.
+The authored site follows the reference's static `public/` structure:
 
-Design adapted from https://github.com/GAInTheHouse/gainthehouse.com/tree/gxa/new-style at revision ce4d5fba93fbd33f913dd079542c29b68abaab65: white and forest-green theme, Inter typography, circular portrait, highlight metrics, bordered project cards, experience timeline, and dark footer. InterVariable.woff2 is sourced from that branch. The previous template background remains unused in assets. Implementation is personalized; no original analytics or Firebase configuration is included.
+```text
+public/
+  index.html
+  css/
+    theme.css
+    components.css
+    lightbox.css
+  js/
+    custom.js
+    lightbox.js
+  data/
+    projects.json
+    work-experience.json
+    education.json
+    skills.json
+    highlights.json
+  images/portrait.jpeg
+  docs/resume.pdf
+  fonts/InterVariable.woff2
+```
 
-Content comes from the supplied resume and Columbia coursework context. Course cases and current learning are labeled separately from professional experience. No unprovided project repositories or live demos are invented. Fonts load from Google Fonts with local fallbacks.
+`index.html` contains the introduction, navigation, section containers, and contact links. `custom.js` fetches JSON and renders sections; `lightbox.js` owns detail dialogs and their navigation. Styles are separated into shared theme rules, page components/responsive rules, and detail-dialog styling.
+
+## Preview
+
+Serve the public directory over HTTP (ES modules and JSON fetches require a server):
+
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1 --directory public
+```
+
+No dependencies or build step are required. Deployment remains deferred. No Firebase project, analytics credentials, or automatic deployment workflows have been copied from the source owner.
+
+## Content
+
+Edit `public/data/` to update projects, experience, education, skills, and career highlights. JSON uses the reference's collection keys (`projects`, `experiences`, `education`, `categories`), with portfolio-specific fields documented in `DATA_SCHEMA.md`. Highlights use a separate file because they represent supplied business results rather than inferred counts.
+
+Only sections supported by Sanskriti's supplied material are included. Unused reference articles, organizations, hobbies, legacy Bootstrap/jQuery, test pages, and other people's assets are omitted. Project and work descriptions retain the existing local rich-text `body` field, rendered by the dialog, rather than the reference's plain-text `description` array. This deliberate extension preserves the current detailed stories; do not put untrusted HTML in these fields.
+
+Design and Inter font provenance: reference branch above. All personal content comes from the supplied resume and Columbia coursework context. The original downloadable resume is unchanged. No deployment has occurred.

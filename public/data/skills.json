@@ -1,0 +1,115 @@
+{
+  "categories": [
+    {
+      "name": "Data science",
+      "skills": [
+        {
+          "label": "Regression"
+        },
+        {
+          "label": "Classification"
+        },
+        {
+          "label": "Regularization"
+        },
+        {
+          "label": "Cross-validation"
+        },
+        {
+          "label": "Feature engineering"
+        },
+        {
+          "label": "XGBoost"
+        },
+        {
+          "label": "Random forests"
+        },
+        {
+          "label": "SHAP"
+        }
+      ],
+      "note": "Interpretable baselines, careful validation, and the right target variable."
+    },
+    {
+      "name": "Business analytics",
+      "skills": [
+        {
+          "label": "Segmentation"
+        },
+        {
+          "label": "Cohort analysis"
+        },
+        {
+          "label": "Funnel analysis"
+        },
+        {
+          "label": "Pricing"
+        },
+        {
+          "label": "Experiment design"
+        },
+        {
+          "label": "A/B testing"
+        },
+        {
+          "label": "Campaign measurement"
+        }
+      ],
+      "note": "Connecting analysis to margin, conversion, retention, and operational outcomes."
+    },
+    {
+      "name": "Agentic AI & LLMs",
+      "skills": [
+        {
+          "label": "Tool calling"
+        },
+        {
+          "label": "Structured outputs"
+        },
+        {
+          "label": "MCP"
+        },
+        {
+          "label": "Embeddings"
+        },
+        {
+          "label": "Retrieval-augmented generation"
+        }
+      ],
+      "note": "Coursework foundation; currently deepening applications in operations research and finance."
+    },
+    {
+      "name": "Optimization",
+      "skills": [
+        {
+          "label": "Linear & integer programming"
+        },
+        {
+          "label": "Gurobi"
+        },
+        {
+          "label": "Scenario modeling"
+        },
+        {
+          "label": "Sensitivity analysis"
+        },
+        {
+          "label": "Constraint formulation"
+        }
+      ],
+      "note": "Making tradeoffs explicit when resources and real-world constraints matter."
+    }
+  ],
+  "tools": [
+    "Python",
+    "SQL",
+    "R",
+    "Tableau",
+    "Looker",
+    "Excel",
+    "Snowflake",
+    "PostgreSQL",
+    "Gurobi",
+    "Git / GitHub"
+  ]
+}

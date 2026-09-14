@@ -1,0 +1,40 @@
+{
+  "experiences": [
+    {
+      "category": "JAN – MAY 2026 · NEW YORK",
+      "title": "OpenSesame",
+      "summary": "Data Science Apprentice, Growth",
+      "subtitle": "Conversion modeling & account segmentation",
+      "body": "<ul><li>Achieved 2× higher conversion among flagged leads by benchmarking XGBoost against L1-regularized logistic regression.</li><li>Used SHAP to identify conversion drivers and segmentation to surface high-value accounts.</li><li>Informed channel routing and marketing budget allocation through win rate and deal value.</li></ul>",
+      "id": 1,
+      "initials": "OS"
+    },
+    {
+      "category": "JAN – MAY 2026 · NEW YORK",
+      "title": "Zoetis",
+      "summary": "Process Improvement Consultant",
+      "subtitle": "Process analysis & repair strategy",
+      "body": "<ul><li>Mapped process bottlenecks and modeled in-house, OEM, and third-party repair alternatives.</li><li>Recommended an optimal repair strategy using turnaround time and cost as decision criteria.</li></ul>",
+      "id": 2,
+      "initials": "Z"
+    },
+    {
+      "category": "DEC 2024 – JUN 2025 · GURUGRAM",
+      "title": "Spinny",
+      "summary": "Business Analyst, Auctions",
+      "subtitle": "Marketplace pricing, fraud detection & dealer growth",
+      "body": "<ul><li>Built an auction bidding model around price elasticity, bid distributions, and demand–supply gaps. Threshold optimization experiments delivered a 45% margin increase and reduced inventory turnaround by 17 hours.</li><li>Trained a fraud detection model on device and geolocation signals across 11K+ records, reducing margin leakage from 8% to 5%.</li><li>Designed a cohort-based campaign that reactivated 1,000+ dormant dealers and drove 20% month-over-month revenue growth.</li></ul>",
+      "id": 3,
+      "initials": "S"
+    },
+    {
+      "category": "SEP 2022 – MAY 2024 · GURUGRAM",
+      "title": "DecisionTree Analytics",
+      "summary": "Data Analyst",
+      "subtitle": "US FMCG client · Customer lifecycle & reporting",
+      "body": "<ul><li>Built customer lifecycle segments spanning activation, retention, churn risk, and cross-sell to guide commercial strategy.</li><li>Optimized SQL pipelines through indexing and partitioning, reducing query runtime from 45 to 20 minutes.</li><li>Automated reporting to save cross-functional teams 5–7 hours per week.</li></ul>",
+      "id": 4,
+      "initials": "DT"
+    }
+  ]
+}
