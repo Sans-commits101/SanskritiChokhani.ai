@@ -37,7 +37,7 @@ Serve the public directory over HTTP (ES modules and JSON fetches require a serv
 python3 -m http.server 8000 --bind 127.0.0.1 --directory public
 ```
 
-No dependencies or build step are required to serve the website. Firebase Hosting and GitHub Actions are configured for `sanskritichokhani-ai`, with production deploys from `main` and pull-request previews. Follow [.github/DEPLOYMENT_SETUP.md](.github/DEPLOYMENT_SETUP.md) to add the GitHub secret and complete deployment. Python 3.9+ is required for `python3 scripts/check-site.py`, which also runs before Firebase deployments. Keep all credentials outside `public/`; local keys belong in the ignored `.secrets/` directory.
+No dependencies or build step are required to serve the website. Firebase Hosting and GitHub Actions are configured for `sanskritichokhani-ai`, with production deploys from `main` and pull-request previews. Follow [.github/DEPLOYMENT_SETUP.md](.github/DEPLOYMENT_SETUP.md) to add the GitHub secret and complete deployment. Keep all credentials outside `public/`; local keys belong in the ignored `.secrets/` directory.
 
 ## Content
 

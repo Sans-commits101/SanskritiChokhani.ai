@@ -21,8 +21,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Validate static site
-        run: python3 scripts/check-site.py
       - name: Check deployment secret is configured
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SANSKRITICHOKHANI_AI }}

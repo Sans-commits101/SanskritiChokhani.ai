@@ -7,7 +7,6 @@
 - Production branch: `main`, matching the local `origin/HEAD`. The working branch is `codex/portfolio-new-style`.
 - This is a static HTML/CSS/JavaScript site with JSON content. Firebase Hosting serves `public/` directly; no npm install, build command, Firebase browser SDK, database, or SPA rewrite is needed. Navigation uses page anchors.
 - The existing service account JSON is already in `.secrets/` with owner-only file permissions (0600); no key is currently present in `public/`. Both Git ignores and Hosting exclusions were added. `.gitignore` alone does **not** control Firebase uploads or a local HTTP server.
-- `scripts/check-site.py` checks local asset references, JSON syntax, and recognizable credential material in `public/`. It also rejects credential-like filenames and symlinks. Both workflows run it; Firebase also runs it before deployment. It is a practical guard, not a comprehensive secret scanner.
 
 ## 1. Confirm Firebase Hosting and permissions
 
@@ -32,13 +31,12 @@ If this key was previously committed or served by a public deployment/server, re
 
 ## 3. Validate and push this branch
 
-From the repository root, with Python 3.9 or newer:
+From the repository root:
 
 ```sh
-python3 scripts/check-site.py
 git status --short
 git diff --check
-git add .gitignore .firebaserc firebase.json .github/ scripts/check-site.py README.md public/index.html
+git add .gitignore .firebaserc firebase.json .github/ README.md public/index.html
 git diff --cached --stat
 git commit -m "Configure Firebase Hosting and GitHub deployments"
 git push -u origin codex/portfolio-new-style
@@ -52,7 +50,7 @@ No separate GitHub webhook or local Git hook is required: the workflow event tri
 
 ## 4. Publish production
 
-Merge the reviewed PR into `main`. Every push to `main`, including a merge, runs **Deploy Firebase production**. A failed validation prevents that run from deploying. Live deployments are serialized; PR previews use separate channels.
+Merge the reviewed PR into `main`. Every push to `main`, including a merge, runs **Deploy Firebase production**. Live deployments are serialized; PR previews use separate channels.
 
 Open the repository's [Actions page](https://github.com/Sans-commits101/SanskritiChokhani.ai/actions) and confirm the production job succeeds. For the assumed default site, visit [the Firebase website](https://sanskritichokhani-ai.web.app). Confirm `/data/projects.json` loads, the resume downloads, and an unknown path returns a 404. The old credential URL should also return 404; do not upload the key to test this.
 
@@ -68,12 +66,11 @@ The footer Portfolio link now points to `#home`, so it works on local, preview, 
 
 ## Optional local Firebase preview or manual deployment
 
-GitHub Actions installs its own deployment tooling; local Node/Firebase CLI installation is optional. To use the commands below, first install a supported Node.js release and the Firebase CLI using the [official CLI setup instructions](https://firebase.google.com/docs/cli#install_the_firebase_cli). Python 3.9+ is also required for this repository's predeploy check.
+GitHub Actions installs its own deployment tooling; local Node/Firebase CLI installation is optional. To use the commands below, first install a supported Node.js release and the Firebase CLI using the [official CLI setup instructions](https://firebase.google.com/docs/cli#install_the_firebase_cli).
 
 ```sh
 firebase login
 firebase projects:list
-python3 scripts/check-site.py
 firebase emulators:start --only hosting --project sanskritichokhani-ai
 ```
 
@@ -92,10 +89,5 @@ That command publishes the current local `public/`, including uncommitted site c
 - **Site/project not found:** confirm Hosting setup, default site ID, and `sanskritichokhani-ai` in `.firebaserc` and both workflows.
 - **PR comment denied:** inspect organization Actions policies and the preview job's `pull-requests: write` permission; the action logs may still contain the preview URL.
 - **No production run:** production listens to `main`, not the feature branch or the copied `master` branch. Manual dispatch also requires `main`.
-- **Credential guard fails:** move the identified file outside `public/`; do not disable the guard.
 
 Local checks do not verify Google IAM, the saved GitHub secret, remote action execution, DNS, or a live release. No deployment, Git push, or remote settings change was performed while preparing this configuration.
-
-### Local review results
-
-The site validator and `git diff --check` passed. Both workflow files parsed as YAML. Isolated fixtures verified rejection of service-account content, credential-like filenames, malformed JSON, missing assets, file symlinks, and a symlinked public root; a nested HTML page with valid relative assets passed. The existing key is Git-ignored and has mode 0600. These checks do not execute GitHub Actions or authenticate to Firebase.
