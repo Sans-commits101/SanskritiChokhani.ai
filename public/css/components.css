@@ -20,11 +20,17 @@
   gap:25px;
 }
 .brand {
-  font-family:Charmonman,cursive;
-  font-size:22px;
-  letter-spacing:1px;
-  color:#6e9424;
+  font-family:Inter,'Helvetica Neue',Arial,sans-serif;
+  font-size:24px;
+  font-weight:760;
+  line-height:1;
+  letter-spacing:-.045em;
+  color:var(--ink);
   white-space:nowrap;
+}
+.brand span {
+  color:var(--accent);
+  font-weight:800;
 }
 .nav-links {
   display:flex;
